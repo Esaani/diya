@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diya Popcorn | Fresh Popcorn in Sunyani</title>
+  <meta name="description" content="Fresh plain, caramel and custom-mix popcorn from Diya Popcorn in Sunyani, Ghana. Order cups, party packs and paper bags.">
+  <meta name="theme-color" content="#b80918">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b80918'/%3E%3Cpath d='M19 28c-7-7 2-16 9-10 2-11 17-9 17 2 10-2 13 13 3 16l-3 15H20l-3-15c-7-1-7-7 2-8Z' fill='%23fff8e8' stroke='%23efaa00' stroke-width='3'/%3E%3C/svg%3E">
+  <style>
+    :root{--red:#b80918;--red-dark:#820711;--gold:#efaa00;--cream:#fff8e8;--ink:#28130f;--muted:#745a4d;--white:#fff;--line:#eadcc5;--shadow:0 22px 70px rgba(80,21,12,.16)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);font-size:16px;line-height:1.55;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .topbar{background:var(--red-dark);color:#fff;text-align:center;padding:8px 16px;font-weight:800;font-size:.88rem;letter-spacing:.04em}
+    header{position:sticky;top:0;z-index:40;background:rgba(255,248,232,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(184,9,24,.1)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:11px;color:var(--red);font-family:Georgia,serif;font-size:1.55rem;font-weight:800;line-height:.9}
+    .brand-logo{width:66px;height:66px;object-fit:cover;border-radius:50%;box-shadow:0 5px 16px rgba(118,26,12,.18);border:2px solid #fff}
+    .brand-mark{width:46px;height:46px;border-radius:50%;background:var(--red);display:grid;place-items:center;color:var(--cream);box-shadow:inset 0 0 0 4px var(--gold)}
+    .brand-mark svg{width:28px}
+    .navlinks{display:flex;gap:26px;align-items:center;font-weight:750;font-size:.95rem}
+    .navlinks a:hover{color:var(--red)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 20px;font-weight:850;transition:.2s ease;border:2px solid transparent;cursor:pointer}
+    .nav-cta,.btn-primary{background:var(--red);color:#fff;box-shadow:0 10px 25px rgba(184,9,24,.22)}
+    .nav-cta:hover,.btn-primary:hover{transform:translateY(-2px);background:var(--red-dark)}
+    .btn-secondary{border-color:var(--red);color:var(--red);background:transparent}
+    .btn-secondary:hover{background:#fff}
+    .menu-btn{display:none;border:0;background:transparent;padding:10px;font-size:1.5rem;color:var(--red)}
+    .hero{position:relative;padding:58px 0 72px;isolation:isolate}
+    .hero:before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;background:var(--gold);opacity:.12;right:-130px;top:-100px;z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:58px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--red);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin-bottom:18px}
+    .eyebrow:before{content:"";width:34px;height:4px;background:var(--gold);border-radius:9px}
+    h1,h2,h3{margin:0;line-height:.96}
+    h1{font-family:Georgia,serif;font-size:clamp(3.6rem,8vw,7rem);letter-spacing:-.055em;color:var(--red)}
+    h1 span{display:block;color:var(--gold);font-family:Inter,sans-serif;font-size:.48em;letter-spacing:-.045em;margin-top:14px}
+    .hero-copy p{font-size:1.13rem;color:var(--muted);max-width:560px;margin:24px 0 30px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .trust{display:flex;flex-wrap:wrap;gap:20px;margin-top:28px;color:var(--muted);font-weight:700;font-size:.92rem}
+    .trust span{display:flex;align-items:center;gap:8px}.trust i{width:9px;height:9px;background:var(--gold);border-radius:50%}
+    .hero-media{position:relative}
+    .hero-media img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:34px;box-shadow:var(--shadow);border:8px solid #fff}
+    .burst{position:absolute;right:-20px;bottom:28px;width:126px;height:126px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;font-weight:900;line-height:1.1;transform:rotate(8deg);border:5px solid var(--cream);box-shadow:0 15px 35px rgba(90,0,0,.22)}
+    .ticker{background:var(--red);color:#fff;overflow:hidden;border-block:4px solid var(--gold)}
+    .ticker-inner{display:flex;white-space:nowrap;gap:30px;padding:13px 0;font-weight:900;letter-spacing:.08em;text-transform:uppercase;animation:slide 24s linear infinite}
+    .ticker b{color:var(--gold)}
+    @keyframes slide{to{transform:translateX(-50%)}}
+    section{padding:92px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
+    .section-head h2{font-family:Georgia,serif;font-size:clamp(2.5rem,5vw,4.7rem);color:var(--red);letter-spacing:-.045em}
+    .section-head p{max-width:500px;color:var(--muted);margin:0}
+    .flavors{background:#fff}
+    .flavor-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+    .flavor-tabs button{border:1px solid var(--line);background:var(--cream);padding:10px 18px;border-radius:999px;font-weight:850;color:var(--muted);cursor:pointer}
+    .flavor-tabs button.active{background:var(--red);color:#fff;border-color:var(--red)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{position:relative;border:1px solid var(--line);border-radius:26px;padding:26px;background:var(--cream);overflow:hidden;min-height:300px;display:flex;flex-direction:column}
+    .card:after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;right:-70px;bottom:-70px;background:var(--gold);opacity:.15}
+    .card-num{font-size:.78rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--red)}
+    .card h3{font-family:Georgia,serif;color:var(--red);font-size:2.25rem;margin:38px 0 12px}
+    .card p{color:var(--muted);margin:0 0 26px;max-width:30ch}
+    .card .mini{margin-top:auto;color:var(--ink);font-weight:850}
+    .card.featured{background:var(--red);color:#fff;border-color:var(--red)}
+    .card.featured .card-num,.card.featured h3,.card.featured .mini{color:#fff}.card.featured p{color:#fbd9d9}.card.featured:after{opacity:.35}
+    .card.with-photo{padding:0;background:#fff}
+    .card.with-photo:after{display:none}
+    .card-photo{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 38%}
+    .card-body{padding:22px 24px 25px;display:flex;flex-direction:column;flex:1}
+    .card.with-photo h3{font-size:1.9rem;margin:13px 0 9px}
+    .card.with-photo p{font-size:.94rem;margin-bottom:16px}
+    .moments{background:#f4e6cc;overflow:hidden}
+    .moments-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(2,340px);gap:18px}
+    .moment-card{position:relative;overflow:hidden;border-radius:28px;background:var(--red);box-shadow:0 18px 50px rgba(78,27,15,.15);isolation:isolate}
+    .moment-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(35,7,4,.86));z-index:1}
+    .moment-card img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease}
+    .moment-card:hover img{transform:scale(1.035)}
+    .moment-copy{position:absolute;left:0;right:0;bottom:0;padding:26px;color:#fff;z-index:2}
+    .moment-copy span{display:block;color:#ffd154;font-size:.76rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px}
+    .moment-copy h3{font-family:Georgia,serif;font-size:clamp(1.7rem,3vw,2.5rem);margin-bottom:8px}
+    .moment-copy p{margin:0;color:#f8e8df;max-width:38ch;font-size:.94rem}
+    .moment-tall{grid-column:1/6;grid-row:1/3}.moment-wide{grid-column:6/13}.moment-small-a{grid-column:6/9}.moment-small-b{grid-column:9/13}
+    .moment-tall img{object-position:center top}.moment-wide img{object-position:center 32%}.moment-small-a img,.moment-small-b img{object-position:center 60%}
+    .experience{position:relative}
+    .experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
+    .experience img{border-radius:32px;box-shadow:var(--shadow);width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
+    .experience h2,.party h2,.contact h2{font-family:Georgia,serif;color:var(--red);font-size:clamp(2.6rem,5vw,5rem);letter-spacing:-.045em}
+    .experience p{color:var(--muted);font-size:1.05rem}
+    .steps{display:grid;gap:13px;margin:28px 0 34px}
+    .step{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}
+    .step b{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:var(--red-dark);font-size:1.2rem}
+    .step strong{display:block;color:var(--red)}.step span{color:var(--muted);font-size:.92rem}
+    .party{background:var(--red);color:#fff;position:relative;overflow:hidden}
+    .party:before,.party:after{content:"";position:absolute;width:220px;height:220px;border:28px solid var(--gold);border-radius:50%;opacity:.12}
+    .party:before{left:-130px;top:-120px}.party:after{right:-120px;bottom:-130px}
+    .party-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+    .party h2{color:#fff}.party p{color:#f8dede;font-size:1.08rem;max-width:560px}
+    .party-tags{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 32px}
+    .party-tags span{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 14px;font-weight:750}
+    .party .btn-primary{background:var(--gold);color:var(--red-dark)}
+    .party img{border-radius:32px;border:7px solid rgba(255,255,255,.18);box-shadow:0 28px 70px rgba(54,0,0,.35);aspect-ratio:1/1;object-fit:cover}
+    .party-gallery{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .party-gallery figure{position:relative;margin:0;overflow:hidden;border-radius:24px}
+    .party-gallery .party-main{grid-column:1/-1}
+    .party-gallery .party-main img{aspect-ratio:16/10}
+    .party-gallery figure:not(.party-main) img{aspect-ratio:4/5}
+    .party-gallery img{width:100%;height:100%;border-radius:24px;border-width:5px}
+    .party-gallery figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(40,10,8,.82);backdrop-filter:blur(7px);color:#fff;padding:10px 12px;border-radius:14px;font-weight:850;text-align:center}
+    .contact{background:#fff}
+    .contact-panel{background:var(--cream);border:1px solid var(--line);border-radius:34px;padding:54px;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;box-shadow:var(--shadow)}
+    .contact p{color:var(--muted);max-width:600px}
+    .contact-list{display:grid;gap:14px}
+    .contact-link{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:17px;padding:15px 18px;font-weight:850;transition:.2s}
+    .contact-link:hover{border-color:var(--red);transform:translateX(4px)}
+    .icon{width:42px;height:42px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:1.15rem;flex:none}
+    footer{background:var(--ink);color:#fff;padding:28px 0}
+    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer p{margin:0;color:#decfc8;font-size:.9rem}
+    .footer-links{display:flex;gap:20px;font-weight:750;font-size:.9rem}
+    .reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.visible{opacity:1;transform:none}
+    @media (max-width:860px){
+      .navlinks{display:none;position:absolute;left:20px;right:20px;top:70px;background:#fff;border:1px solid var(--line);padding:20px;border-radius:20px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+      .hero-grid,.experience-grid,.party-grid,.contact-panel{grid-template-columns:1fr}.hero{padding-top:38px}.hero-media{order:-1}.hero-media img{aspect-ratio:4/3}.burst{width:104px;height:104px;right:10px}
+      .cards{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.experience img{aspect-ratio:4/3}.party img{aspect-ratio:4/3}.contact-panel{padding:30px}
+      .moments-grid{grid-template-columns:1fr 1fr;grid-template-rows:520px 330px 330px}.moment-tall{grid-column:1/3;grid-row:auto}.moment-wide{grid-column:1/3}.moment-small-a,.moment-small-b{grid-column:auto}.moment-small-a img,.moment-small-b img{object-position:center 55%}
+    }
+    @media (max-width:520px){.wrap{width:min(100% - 24px,1160px)}nav{height:68px}.brand{font-size:1.25rem}.brand-logo{width:54px;height:54px}.brand-mark{width:40px;height:40px}h1{font-size:3.45rem}.hero-media img{border-radius:24px;border-width:5px}.actions{display:grid}.btn{width:100%}section{padding:70px 0}.card{min-height:250px}.contact-panel{padding:24px;border-radius:24px}.contact-link{font-size:.9rem;padding:12px}.footer-links{width:100%;justify-content:space-between}.moments-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(4,440px)}.moment-tall,.moment-wide,.moment-small-a,.moment-small-b{grid-column:1;grid-row:auto}.moment-copy{padding:22px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-inner{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <div class="topbar">Freshly popped in Sunyani, Ghana</div>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Diya Popcorn home"><img class="brand-logo" src="assets/diya-logo.jpg" alt="Diya Popcorn"></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu">☰</button>
+      <div class="navlinks" id="navlinks"><a href="#flavors">Flavors</a><a href="#moments">Moments</a><a href="#mix">Custom Mix</a><a href="#events">Events</a><a href="#contact">Contact</a></div>
+      <a class="nav-cta" href="tel:0534546495">Order now</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Pop it. Love it. Share it.</div>
+          <h1>Big joy<span>in every delicious pop.</span></h1>
+          <p>Fresh plain, caramel and custom-mix popcorn packed for cravings, gifts, parties and unforgettable moments.</p>
+          <div class="actions"><a class="btn btn-primary" href="tel:0534546495">Call 0534546495</a><a class="btn btn-secondary" href="#flavors">Explore flavors</a></div>
+          <div class="trust"><span><i></i> Freshly made</span><span><i></i> Party-ready packs</span><span><i></i> Sunyani pickup</span></div>
+        </div>
+        <div class="hero-media reveal"><img src="assets/party-bags.jpg" alt="Red and gold Diya Popcorn paper bags arranged with caramel popcorn"><div class="burst">Made for<br>sharing</div></div>
+      </div>
+    </section>
+    <div class="ticker" aria-hidden="true"><div class="ticker-inner"><span>Plain <b>•</b> Caramel <b>•</b> Custom Mix <b>•</b> Party Packs <b>•</b> Event Orders <b>•</b></span><span>Plain <b>•</b> Caramel <b>•</b> Custom Mix <b>•</b> Party Packs <b>•</b> Event Orders <b>•</b></span></div></div>
+    <section class="flavors" id="flavors">
+      <div class="wrap">
+        <div class="section-head reveal"><h2>Pick your pop.</h2><p>Choose a classic favorite, a rich caramel crunch, or one of our new dessert-inspired signature mixes.</p></div>
+        <div class="flavor-tabs" role="tablist" aria-label="Flavor categories"><button class="active" data-filter="all">All favorites</button><button data-filter="classic">Classic</button><button data-filter="sweet">Sweet</button><button data-filter="signature">Signature</button><button data-filter="custom">Custom</button></div>
+        <div class="cards">
+          <article class="card with-photo reveal" data-kind="classic"><img class="card-photo" loading="lazy" src="assets/classic-popcorn.jpg" alt="Classic popcorn in a gold Diya Popcorn cup"><div class="card-body"><span class="card-num">01 · Classic</span><h3>Plain</h3><p>Light, crunchy and perfectly popped for easy everyday snacking.</p><span class="mini">Clean. Crisp. Satisfying.</span></div></article>
+          <article class="card with-photo reveal" data-kind="sweet"><img class="card-photo" loading="lazy" src="assets/caramel-popcorn.jpg" alt="Caramel popcorn in a red Diya Popcorn cup"><div class="card-body"><span class="card-num">02 · Sweet</span><h3>Caramel</h3><p>Glossy, golden and richly coated for a sweet crunch that keeps calling you back.</p><span class="mini">Sweet. Rich. Irresistible.</span></div></article>
+          <article class="card with-photo reveal" data-kind="custom"><img class="card-photo" loading="lazy" src="assets/custom-mix-popcorn.jpg" alt="Custom popcorn mix with pretzels, candy, chocolate and marshmallows in a red Diya cup"><div class="card-body"><span class="card-num">03 · Your creation</span><h3>Custom Mix</h3><p>Choose your drizzle, then finish with cookies, pretzels, sprinkles or colorful candy.</p><span class="mini">Endless combinations.</span></div></article>
+          <article class="card with-photo reveal" data-kind="signature"><img class="card-photo" loading="lazy" src="assets/cookies-cream.jpg" alt="Cookies and cream popcorn in a red Diya cup"><div class="card-body"><span class="card-num">04 · Signature</span><h3>Cookies & Cream</h3><p>Creamy popcorn with rich chocolate cookie pieces.</p><span class="mini">Creamy. Crunchy. Chocolatey.</span></div></article>
+          <article class="card with-photo reveal" data-kind="signature"><img class="card-photo" loading="lazy" src="assets/red-velvet.jpg" alt="Red velvet popcorn in a gold Diya cup"><div class="card-body"><span class="card-num">05 · Signature</span><h3>Red Velvet</h3><p>Sweet cream-coated popcorn with red velvet crumble.</p><span class="mini">Smooth. Sweet. Vibrant.</span></div></article>
+          <article class="card with-photo reveal" data-kind="signature"><img class="card-photo" loading="lazy" src="assets/key-lime-pie.jpg" alt="Key lime pie popcorn in a red Diya cup"><div class="card-body"><span class="card-num">06 · Signature</span><h3>Key Lime Pie</h3><p>Zesty lime, smooth drizzle and biscuit crunch.</p><span class="mini">Zesty. Creamy. Bright.</span></div></article>
+          <article class="card with-photo reveal" data-kind="signature"><img class="card-photo" loading="lazy" src="assets/chunky-monkey.jpg" alt="Chunky monkey popcorn with banana chips and chocolate"><div class="card-body"><span class="card-num">07 · Signature</span><h3>Chunky Monkey</h3><p>Banana chips, chocolate drizzle and caramel crunch.</p><span class="mini">Playful. Rich. Loaded.</span></div></article>
+          <article class="card with-photo reveal" data-kind="signature"><img class="card-photo" loading="lazy" src="assets/apple-pie.jpg" alt="Apple pie popcorn in a red Diya cup"><div class="card-body"><span class="card-num">08 · Signature</span><h3>Apple Pie</h3><p>Cozy cinnamon, apple pieces and buttery crumble.</p><span class="mini">Warm. Spiced. Comforting.</span></div></article>
+          <article class="card with-photo reveal" data-kind="signature"><img class="card-photo" loading="lazy" src="assets/biscoff-cookie.jpg" alt="Biscoff cookie popcorn in a gold Diya cup"><div class="card-body"><span class="card-num">09 · Signature</span><h3>Biscoff Cookie</h3><p>Caramel-coated popcorn with spiced cookie pieces.</p><span class="mini">Caramelized. Spiced. Moreish.</span></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="moments" id="moments">
+      <div class="wrap">
+        <div class="section-head reveal"><h2>Made to match the moment.</h2><p>From colorful topping bars to cozy movie-night bowls, every Diya pack brings a little more joy to the table.</p></div>
+        <div class="moments-grid">
+          <article class="moment-card moment-tall reveal"><img loading="lazy" src="assets/party-topping-bar.jpg" alt="Yellow Diya Popcorn cup filled with colorful sprinkle popcorn"><div class="moment-copy"><span>Party favorite</span><h3>Topping bar magic</h3><p>Bright sprinkles, playful flavors and a cup guests will remember.</p></div></article>
+          <article class="moment-card moment-wide reveal"><img loading="lazy" src="assets/sweet-salty-mix.jpg" alt="Red Diya Popcorn cup filled with popcorn, pretzels, chocolate drizzle and candy"><div class="moment-copy"><span>Sweet meets salty</span><h3>A little bit of everything.</h3><p>Crunchy pretzels, chocolate drizzle and colorful candy in one irresistible mix.</p></div></article>
+          <article class="moment-card moment-small-a reveal"><img loading="lazy" src="assets/yellow-bag-lifestyle.jpg" alt="Yellow Diya Popcorn paper bag beside a bowl of fresh popcorn"><div class="moment-copy"><span>Golden pack</span><h3>Bright & buttery</h3></div></article>
+          <article class="moment-card moment-small-b reveal"><img loading="lazy" src="assets/red-bag-lifestyle.jpg" alt="Red Diya Popcorn paper bag beside a bowl of fresh popcorn"><div class="moment-copy"><span>Signature red</span><h3>Classic Diya joy</h3></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="experience" id="mix">
+      <div class="wrap experience-grid">
+        <img class="reveal" src="assets/custom-mix.png" alt="Diya Popcorn custom mix menu with drizzle and topping choices">
+        <div class="reveal"><div class="eyebrow">Make it yours</div><h2>Build your perfect mix.</h2><p>Start with fresh popcorn, pick a rich drizzle, and add the toppings that make you smile.</p><div class="steps"><div class="step"><b>1</b><div><strong>Choose your base</strong><span>Fresh, fluffy popcorn.</span></div></div><div class="step"><b>2</b><div><strong>Pick a drizzle</strong><span>Milk, dark or white chocolate, or caramel.</span></div></div><div class="step"><b>3</b><div><strong>Add the fun</strong><span>Cookies, pretzels, sprinkles and candy toppings.</span></div></div></div><a class="btn btn-primary" href="tel:0209414746">Create your mix</a></div>
+      </div>
+    </section>
+    <section class="party" id="events">
+      <div class="wrap party-grid">
+        <div class="reveal"><div class="eyebrow" style="color:#ffd04a">Cups, favors & party packs</div><h2>Bring Diya to the celebration.</h2><p>Birthdays, weddings, funfairs, school programs and group orders—choose from popcorn cups, cupcakes, favor boxes and share-ready packs.</p><div class="party-tags"><span>Birthdays</span><span>Weddings</span><span>Popcorn cupcakes</span><span>Favor boxes</span><span>Bulk orders</span></div><a class="btn btn-primary" href="tel:0534546495">Plan an event order</a></div>
+        <div class="party-gallery reveal">
+          <figure class="party-main"><img loading="lazy" src="assets/product-line.png" alt="Diya Popcorn cups, party packs and paper bags displayed around a popcorn cart"><figcaption>Cups, packs & paper bags</figcaption></figure>
+          <figure><img loading="lazy" src="assets/popcorn-cupcakes.jpg" alt="Diya Popcorn cupcakes displayed on a celebration stand"><figcaption>Popcorn Cupcakes</figcaption></figure>
+          <figure><img loading="lazy" src="assets/party-favor-boxes.jpg" alt="Diya Popcorn party favor boxes wrapped with ribbons"><figcaption>Party Favor Boxes</figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="wrap"><div class="contact-panel reveal"><div><div class="eyebrow">Order direct</div><h2>Your next snack is one call away.</h2><p>Contact Diya Popcorn for personal orders, gifts, event packs and bulk purchases in Sunyani.</p></div><div class="contact-list"><a class="contact-link" href="tel:0534546495"><span class="icon">☎</span><span>0534546495</span></a><a class="contact-link" href="tel:0209414746"><span class="icon">☎</span><span>0209414746</span></a><a class="contact-link" href="https://diyapop.com"><span class="icon">◎</span><span>diyapop.com</span></a><div class="contact-link"><span class="icon">⌖</span><span>Sunyani-Ghana</span></div></div></div></div>
+    </section>
+  </main>
+  <footer><div class="wrap"><div class="brand" style="color:#fff"><span>Diya Popcorn</span></div><p>Fresh popcorn and party-ready packs from Sunyani.</p><div class="footer-links"><a href="#flavors">Flavors</a><a href="#events">Events</a><a href="#contact">Order</a></div></div></footer>
+  <script>
+    const menu=document.querySelector('.menu-btn'),links=document.querySelector('#navlinks');
+    menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});
+    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+    document.querySelectorAll('.flavor-tabs button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.flavor-tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const filter=btn.dataset.filter;document.querySelectorAll('.card').forEach(card=>{card.style.display=filter==='all'||card.dataset.kind===filter?'flex':'none'})}));
+    const observer=new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting)item.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4054e118be12c70',t:'MTc5MDI4OTc3NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
