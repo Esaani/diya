@@ -10,8 +10,8 @@
   <style>
     :root{--red:#b80918;--red-dark:#820711;--gold:#efaa00;--cream:#fff8e8;--ink:#28130f;--muted:#745a4d;--white:#fff;--line:#eadcc5;--shadow:0 22px 70px rgba(80,21,12,.16)}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);font-size:16px;line-height:1.55;overflow-x:hidden}
+    html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);font-size:16px;line-height:1.55;overflow-x:hidden;width:100%;position:relative}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
     button{font:inherit}
@@ -31,7 +31,7 @@
     .btn-secondary{border-color:var(--red);color:var(--red);background:transparent}
     .btn-secondary:hover{background:#fff}
     .menu-btn{display:none;border:0;background:transparent;padding:10px;font-size:1.5rem;color:var(--red)}
-    .hero{position:relative;padding:58px 0 72px;isolation:isolate}
+    .hero{position:relative;padding:58px 0 72px;isolation:isolate;overflow:hidden}
     .hero:before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;background:var(--gold);opacity:.12;right:-130px;top:-100px;z-index:-1}
     .hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:58px}
     .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--red);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin-bottom:18px}
@@ -139,7 +139,7 @@
       <a class="brand" href="#top" aria-label="Diya Popcorn home"><img class="brand-logo" src="assets/diya-logo.jpg" alt="Diya Popcorn"></a>
       <button class="menu-btn" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu">☰</button>
       <div class="navlinks" id="navlinks"><a href="#flavors">Flavors</a><a href="#moments">Moments</a><a href="#mix">Custom Mix</a><a href="#events">Events</a><a href="#contact">Contact</a></div>
-      <a class="nav-cta" href="tel:0534546495">Order now</a>
+      <button class="nav-cta" id="openOrderModalBtn" style="border:none;">Order now</button>
     </nav>
   </header>
   <main id="top">
@@ -187,12 +187,12 @@
     <section class="experience" id="mix">
       <div class="wrap experience-grid">
         <img class="reveal" src="assets/custom-mix.png" alt="Diya Popcorn custom mix menu with drizzle and topping choices">
-        <div class="reveal"><div class="eyebrow">Make it yours</div><h2>Build your perfect mix.</h2><p>Start with fresh popcorn, pick a rich drizzle, and add the toppings that make you smile.</p><div class="steps"><div class="step"><b>1</b><div><strong>Choose your base</strong><span>Fresh, fluffy popcorn.</span></div></div><div class="step"><b>2</b><div><strong>Pick a drizzle</strong><span>Milk, dark or white chocolate, or caramel.</span></div></div><div class="step"><b>3</b><div><strong>Add the fun</strong><span>Cookies, pretzels, sprinkles and candy toppings.</span></div></div></div><a class="btn btn-primary" href="tel:0209414746">Create your mix</a></div>
+        <div class="reveal"><div class="eyebrow">Make it yours</div><h2>Build your perfect mix.</h2><p>Start with fresh popcorn, pick a rich drizzle, and add the toppings that make you smile.</p><div class="steps"><div class="step"><b>1</b><div><strong>Choose your base</strong><span>Fresh, fluffy popcorn.</span></div></div><div class="step"><b>2</b><div><strong>Pick a drizzle</strong><span>Milk, dark or white chocolate, or caramel.</span></div></div><div class="step"><b>3</b><div><strong>Add the fun</strong><span>Cookies, pretzels, sprinkles and candy toppings.</span></div></div></div><button class="btn btn-primary" id="openMixModalBtn">Create your mix</button></div>
       </div>
     </section>
     <section class="party" id="events">
       <div class="wrap party-grid">
-        <div class="reveal"><div class="eyebrow" style="color:#ffd04a">Cups, favors & party packs</div><h2>Bring Diya to the celebration.</h2><p>Birthdays, weddings, funfairs, school programs and group orders—choose from popcorn cups, cupcakes, favor boxes and share-ready packs.</p><div class="party-tags"><span>Birthdays</span><span>Weddings</span><span>Popcorn cupcakes</span><span>Favor boxes</span><span>Bulk orders</span></div><a class="btn btn-primary" href="tel:0534546495">Plan an event order</a></div>
+        <div class="reveal"><div class="eyebrow" style="color:#ffd04a">Cups, favors & party packs</div><h2>Bring Diya to the celebration.</h2><p>Birthdays, weddings, funfairs, school programs and group orders—choose from popcorn cups, cupcakes, favor boxes and share-ready packs.</p><div class="party-tags"><span>Birthdays</span><span>Weddings</span><span>Popcorn cupcakes</span><span>Favor boxes</span><span>Bulk orders</span></div><button class="btn btn-primary" id="openEventModalBtn">Plan an event order</button></div>
         <div class="party-gallery reveal">
           <figure class="party-main"><img loading="lazy" src="assets/product-line.png" alt="Diya Popcorn cups, party packs and paper bags displayed around a popcorn cart"><figcaption>Cups, packs & paper bags</figcaption></figure>
           <figure><img loading="lazy" src="assets/popcorn-cupcakes.jpg" alt="Diya Popcorn cupcakes displayed on a celebration stand"><figcaption>Popcorn Cupcakes</figcaption></figure>
@@ -212,5 +212,312 @@
     document.querySelectorAll('.flavor-tabs button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.flavor-tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const filter=btn.dataset.filter;document.querySelectorAll('.card').forEach(card=>{card.style.display=filter==='all'||card.dataset.kind===filter?'flex':'none'})}));
     const observer=new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting)item.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   </script>
+<style>
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .modal-content {
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 24px;
+    width: min(90%, 500px);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 2px solid rgba(239, 170, 0, 0.2);
+  }
+  .modal-overlay.active .modal-content {
+    transform: translateY(0);
+  }
+  .modal-close {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: var(--red); }
+  .modal-content h2 { margin-top: 0; color: var(--red); font-family: Georgia, serif; font-size: 1.8rem; }
+  .modal-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.3rem; }
+  .form-group label { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(239, 170, 0, 0.2);
+  }
+  .form-row { display: flex; gap: 1rem; }
+  .form-row .form-group { flex: 1; }
+  @media (max-width: 520px) {
+    .form-row { flex-direction: column; gap: 0.8rem; }
+    .modal-content { padding: 1.5rem; max-height: 90vh; overflow-y: auto; }
+  }
+</style>
+<div class="modal-overlay" id="eventModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeEventModalBtn">&times;</button>
+    <div id="eventFormView">
+      <h2>Plan Your Event</h2>
+      <p style="margin-top:-0.5rem; color:var(--muted); font-size:0.95rem;">Let us bring the popcorn magic to your next celebration.</p>
+      <form class="modal-form" onsubmit="event.preventDefault(); document.getElementById('eventFormView').style.display='none'; document.getElementById('eventSuccessView').style.display='block';">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" required placeholder="Jane Doe">
+        </div>
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="tel" required placeholder="0209414746">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Location / Venue</label>
+        <input type="text" required placeholder="e.g. Sunyani Technical University">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Event Date</label>
+          <input type="date" required>
+        </div>
+        <div class="form-group">
+          <label>Guests</label>
+          <input type="number" required placeholder="50" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Event Type</label>
+        <select required>
+          <option value="" disabled selected>Select an event</option>
+          <option>Birthday Party</option>
+          <option>Wedding</option>
+          <option>School Program</option>
+          <option>Corporate Event</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Details / Special Requests</label>
+        <textarea rows="3" placeholder="Tell us about your event..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top:0.5rem; width: 100%;">Submit Request</button>
+    </form>
+    </div>
+    <div id="eventSuccessView" style="display:none; text-align:center; padding:2rem 0;">
+      <div style="font-size:3.5rem; margin-bottom:1rem;">🎉</div>
+      <h2 style="color:var(--red); font-family:Georgia,serif; font-size:2.2rem; margin-top:0;">Thank You!</h2>
+      <p style="color:var(--muted); font-size:1rem;">Your event request is received. We'll contact you shortly!</p>
+      <button type="button" class="btn btn-primary" onclick="document.getElementById('eventModal').classList.remove('active');" style="margin-top:1.5rem; width:100%;">Done</button>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('openEventModalBtn').addEventListener('click', () => {
+    document.getElementById('eventFormView').style.display='block';
+    document.getElementById('eventSuccessView').style.display='none';
+    document.querySelector('#eventModal form').reset();
+    document.getElementById('eventModal').classList.add('active');
+  });
+  document.getElementById('closeEventModalBtn').addEventListener('click', () => {
+    document.getElementById('eventModal').classList.remove('active');
+  });
+  document.getElementById('eventModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('eventModal')) {
+      document.getElementById('eventModal').classList.remove('active');
+    }
+  });
+</script>
+<div class="modal-overlay" id="mixModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeMixModalBtn">&times;</button>
+    <div id="mixFormView">
+      <h2>Create Your Mix</h2>
+      <p style="margin-top:-0.5rem; color:var(--muted); font-size:0.95rem;">Customize your perfect popcorn box.</p>
+      <form class="modal-form" onsubmit="event.preventDefault(); document.getElementById('mixFormView').style.display='none'; document.getElementById('mixSuccessView').style.display='block';">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" required placeholder="Jane Doe">
+        </div>
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="tel" required placeholder="0209414746">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Location / Address</label>
+        <input type="text" required placeholder="e.g. Area 2, Sunyani">
+      </div>
+      <div class="form-group">
+        <label>Base</label>
+        <input type="text" value="Fresh, Fluffy Popcorn" disabled style="background:#f5f5f5; color:var(--muted);">
+      </div>
+      <div class="form-group">
+        <label>Pick a Drizzle</label>
+        <select required>
+          <option value="" disabled selected>Select drizzle...</option>
+          <option>Milk Chocolate</option>
+          <option>Dark Chocolate</option>
+          <option>White Chocolate</option>
+          <option>Caramel</option>
+          <option>No Drizzle</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Add the Fun (Toppings)</label>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:5px;">
+          <label style="font-weight:normal; font-size:0.9rem; display:flex; align-items:center; gap:5px;"><input type="checkbox" name="topping" value="Cookies" style="padding:0; width:16px; height:16px; border-radius:4px; box-shadow:none;"> Cookies</label>
+          <label style="font-weight:normal; font-size:0.9rem; display:flex; align-items:center; gap:5px;"><input type="checkbox" name="topping" value="Pretzels" style="padding:0; width:16px; height:16px; border-radius:4px; box-shadow:none;"> Pretzels</label>
+          <label style="font-weight:normal; font-size:0.9rem; display:flex; align-items:center; gap:5px;"><input type="checkbox" name="topping" value="Sprinkles" style="padding:0; width:16px; height:16px; border-radius:4px; box-shadow:none;"> Sprinkles</label>
+          <label style="font-weight:normal; font-size:0.9rem; display:flex; align-items:center; gap:5px;"><input type="checkbox" name="topping" value="Candy" style="padding:0; width:16px; height:16px; border-radius:4px; box-shadow:none;"> Candy</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Size / Quantity</label>
+        <select required>
+          <option value="1 Regular Box">1 Regular Box</option>
+          <option value="1 Large Box">1 Large Box</option>
+          <option value="Multiple Boxes">Multiple Boxes (Add details below)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Additional Notes</label>
+        <textarea rows="2" placeholder="Any special instructions?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top:0.5rem; width: 100%;">Order Custom Mix</button>
+    </form>
+    </div>
+    <div id="mixSuccessView" style="display:none; text-align:center; padding:2rem 0;">
+      <div style="font-size:3.5rem; margin-bottom:1rem;">🍿</div>
+      <h2 style="color:var(--red); font-family:Georgia,serif; font-size:2.2rem; margin-top:0;">Awesome Mix!</h2>
+      <p style="color:var(--muted); font-size:1rem;">Your custom mix order is received. We'll contact you to confirm!</p>
+      <button type="button" class="btn btn-primary" onclick="document.getElementById('mixModal').classList.remove('active');" style="margin-top:1.5rem; width:100%;">Done</button>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('openMixModalBtn').addEventListener('click', () => {
+    document.getElementById('mixFormView').style.display='block';
+    document.getElementById('mixSuccessView').style.display='none';
+    document.querySelector('#mixModal form').reset();
+    document.getElementById('mixModal').classList.add('active');
+  });
+  document.getElementById('closeMixModalBtn').addEventListener('click', () => {
+    document.getElementById('mixModal').classList.remove('active');
+  });
+  document.getElementById('mixModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('mixModal')) {
+      document.getElementById('mixModal').classList.remove('active');
+    }
+  });
+</script>
+<div class="modal-overlay" id="orderModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeOrderModalBtn">&times;</button>
+    <div id="orderFormView">
+      <h2>Order Your Popcorn</h2>
+      <p style="margin-top:-0.5rem; color:var(--muted); font-size:0.95rem;">Select your favorite flavors and get them delivered or pick up.</p>
+      <form class="modal-form" onsubmit="event.preventDefault(); document.getElementById('orderFormView').style.display='none'; document.getElementById('orderSuccessView').style.display='block';">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" required placeholder="Jane Doe">
+        </div>
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="tel" required placeholder="0209414746">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Location / Address</label>
+        <input type="text" required placeholder="e.g. Area 2, Sunyani">
+      </div>
+      <div class="form-group">
+        <label>Select Flavor</label>
+        <select required>
+          <option value="" disabled selected>Choose a flavor...</option>
+          <option>Plain (Classic)</option>
+          <option>Caramel (Sweet)</option>
+          <option>Cookies & Cream (Signature)</option>
+          <option>Red Velvet (Signature)</option>
+          <option>Key Lime Pie (Signature)</option>
+          <option>Chunky Monkey (Signature)</option>
+          <option>Apple Pie (Signature)</option>
+          <option>Biscoff Cookie (Signature)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Quantity</label>
+        <select required>
+          <option value="1 Box">1 Box</option>
+          <option value="2 Boxes">2 Boxes</option>
+          <option value="3 Boxes">3 Boxes</option>
+          <option value="4+ Boxes">4+ Boxes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Delivery Option</label>
+        <select required>
+          <option value="Pickup in Sunyani">Pickup in Sunyani</option>
+          <option value="Delivery">Delivery (Add address in notes)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Notes / Delivery Address</label>
+        <textarea rows="2" placeholder="Any special instructions or your address..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top:0.5rem; width: 100%;">Place Order</button>
+    </form>
+    </div>
+    <div id="orderSuccessView" style="display:none; text-align:center; padding:2rem 0;">
+      <div style="font-size:3.5rem; margin-bottom:1rem;">✨</div>
+      <h2 style="color:var(--red); font-family:Georgia,serif; font-size:2.2rem; margin-top:0;">Order Placed!</h2>
+      <p style="color:var(--muted); font-size:1rem;">We've received your order and will contact you shortly to confirm.</p>
+      <button type="button" class="btn btn-primary" onclick="document.getElementById('orderModal').classList.remove('active');" style="margin-top:1.5rem; width:100%;">Done</button>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('openOrderModalBtn').addEventListener('click', () => {
+    document.getElementById('orderFormView').style.display='block';
+    document.getElementById('orderSuccessView').style.display='none';
+    document.querySelector('#orderModal form').reset();
+    document.getElementById('orderModal').classList.add('active');
+  });
+  document.getElementById('closeOrderModalBtn').addEventListener('click', () => {
+    document.getElementById('orderModal').classList.remove('active');
+  });
+  document.getElementById('orderModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('orderModal')) {
+      document.getElementById('orderModal').classList.remove('active');
+    }
+  });
+</script>
 <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4054e118be12c70',t:'MTc5MDI4OTc3NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
